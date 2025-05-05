@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Étape 5 : Exposer le port 7860 (obligatoire pour Hugging Face Spaces)
-EXPOSE 5000
+EXPOSE 7860
 
 # Étape 6 : Lancer l'application Flask
 CMD ["python", "app.py"]
