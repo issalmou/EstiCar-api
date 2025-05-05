@@ -34,9 +34,8 @@ def predict():
     ]
     data = request.get_json()
     for i in equipements:
-        if data[i] == 1:
-            data[i] = 1.0
-        data[i] = 0.0
+        data[i] = 1.0 if data.get(i) == 1 else 0.0
+
     data = pd.DataFrame([data])
     input_features = preprocessor.transform(data)
     prediction = model.predict(input_features)
@@ -87,4 +86,4 @@ def list_voiture_similaire_specifie():
     )
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=7860)
