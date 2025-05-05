@@ -5,7 +5,7 @@ import joblib
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app)  # <-- Autoriser toutes les origines
+# CORS(app)  # <-- Autoriser toutes les origines
 
 # Charger le modèle
 model = joblib.load("model_random_forest.pkl")
@@ -86,4 +86,4 @@ def list_voiture_similaire_specifie():
     )
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=7860)
+    app.run(host="0.0.0.0", port=5000)
